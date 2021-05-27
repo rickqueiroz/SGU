@@ -54,24 +54,39 @@ function validar() {
    			Swal.fire({
  		    icon: 'error',
   			title: 'Oops...',
-  			text: 'Obrigatorio Digitar o Nome!',
+  			text: 'Obrigatorio Digitar o CPF!',
   
 })
    		document.frmCadastro.txtCPF.focus();
 		return false;
 	}
 	if(document.frmCadastro.txtNome.value == ""){
-         
+         Swal.fire({
+ 		    icon: 'error',
+  			title: 'Oops...',
+  			text: 'Obrigatorio Digitar o Nome!',
+			
+		 })
          document.frmCadastro.txtNome.focus();
          return false;
      }
 	 if (document.frmCadastro.perfil.value == ""){
-		 
+		 Swal.fire({
+ 		    icon: 'error',
+  			title: 'Oops...',
+  			text: 'Obrigatorio Selecionar o perfil!',
+			
+		 })
 		 document.frmCadastro.perfil.focus()
 		 return false;
 		 }
 		 if (document.frmCadastro.programas.value == ""){
-		 
+		 Swal.fire({
+ 		    icon: 'error',
+  			title: 'Oops...',
+  			text: 'Obrigatorio Selecionar a Pasta!',
+			
+		 })
 		 document.frmCadastro.programas.focus()
 		 return false;
 		 }
@@ -166,11 +181,11 @@ if(resp == 2){
         <div class="form-group row">
         <div class="col-4">
           <label for="txtCPF" class="col-form-label col-form-label-sm" >CPF</label>
-          <input type="text" class="form-control col-form-sm" onKeyPress="MascaraCPF(txtCPF)"  name="txtCPF" id="txtCPF" required value="<%IF Existe = 1 THEN Response.Write(CPF) ELSE Response.Write(Request("txtCPF")) END IF%>" maxlength="14" onChange="MascaraCPF(txtCPF);verificar_cadastro();"<%IF REQUEST ("Operacao") = 2 AND Existe = 1 THEN%> readonly<%END IF%>/>
+          <input type="text" class="form-control col-form-sm" onKeyPress="MascaraCPF(txtCPF)"  name="txtCPF" id="txtCPF"  value="<%IF Existe = 1 THEN Response.Write(CPF) ELSE Response.Write(Request("txtCPF")) END IF%>" maxlength="14" onChange="MascaraCPF(txtCPF);verificar_cadastro();"<%IF REQUEST ("Operacao") = 2 AND Existe = 1 THEN%> readonly<%END IF%>/>
         </div>
             <div class="col">
             <label for="txtNome" class="col-form-label col-form-label-sm" >Nome Completo</label>
-            <input type="text" class="form-control col-form-sm" id="txtNome" name="txtNome" size="60" required value="<%=Nome%>"/>
+            <input type="text" class="form-control col-form-sm" id="txtNome" name="txtNome" size="60"  value="<%=Nome%>"/>
           </div>
         </div>
 
@@ -183,7 +198,7 @@ call abreConexao
 set rs=conn.execute(sql) 
 %>
 <label for="perfil" class="col-form-label col-form-label-sm" >Perfil</label>
-<select name="perfil" id="perfil"  class="select2-single form-control col-form-label-sm" required>
+<select name="perfil" id="perfil"  class="select2-single form-control col-form-label-sm" >
 <option value="">Selecionar</option>
 <%do while not rs.eof%>
 <option value="<%=rs("idPerfil")%>" <%if rs("idPerfil") = CodPrograma then%>selected<%end if%>><%=rs("Perfil")%>
@@ -202,7 +217,7 @@ call abreConexao
 set rs1 = conn.execute(sql) 
 %>
 <label for="programas" class="col-form-label col-form-label-sm" >Pastas</label>
-<select name="programas" id="programas" class="select2-single form-control col-form-label-sm" required>
+<select name="programas" id="programas" class="select2-single form-control col-form-label-sm" >
 			<option value="">Selecionar</option>
 				<%do while not rs1.eof%>
 			<option value="<%=rs1("id")%>" <%if rs1("id") = CodPrograma then%>selected<%end if%>><%=rs1("Programas")%>

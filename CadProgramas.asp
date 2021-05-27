@@ -48,7 +48,26 @@ END IF
 <script src="javascript/Mascara.js"></script>
 <script type="text/javascript">
 function validar() {
-
+if(document.frmProgramas.txtSigla.value == ""){
+   			Swal.fire({
+ 		    icon: 'error',
+  			title: 'Oops...',
+  			text: 'Obrigatorio Digitar a Sigla!',
+  
+})
+   		document.frmProgramas.txtSigla.focus();
+		return false;
+	}
+	if(document.frmProgramas.txtNome.value == ""){
+   			Swal.fire({
+ 		    icon: 'error',
+  			title: 'Oops...',
+  			text: 'Obrigatorio Digitar o Nome da Sigla!',
+  
+})
+   		document.frmProgramas.txtNome.focus();
+		return false;
+	}
 }
 
 function cadastrar(){
@@ -139,19 +158,18 @@ if(resp == 3){
         <div class="col-4">
         
           <label for="txtSigla" class="col-form-label col-form-label-sm" >Sigla</label>
-          <input type="text" class="form-control col-form-sm" id="txtSigla" name="txtSigla" required value="<%=Sigla%>"/>
+          <input type="text" class="form-control col-form-sm" id="txtSigla" name="txtSigla"  value="<%=Sigla%>"/>
         </div>
             <div class="col">
             
             <label for="txtNome" class="col-form-label col-form-label-sm" >Nome da Sigla</label>
-            <input type="text" class="form-control col-form-sm" name="txtNome" id="txtNome" required value="<%=programas%>"/>
+            <input type="text" class="form-control col-form-sm" name="txtNome" id="txtNome"  value="<%=programas%>"/>
           </div>
         </div>
 			
         <div class="form-group row">
         <div class="col-3">
-        </div>
-           <div class="col-3">
+        <div class="form-group row g-3">
            <%IF EXISTE = 1 THEN%>
 <label for="status" class="col-form-label col-form-label-sm" >Status</label>
 <select name="status" id="status" class="select2-single form-control col-form-label-sm">
@@ -159,7 +177,8 @@ if(resp == 3){
 <option value="0" <%if StatusPrograma = false then%> selected <%end if%>> Inativo </option>
 </select>
 <%END IF%>
-        
+    </div> 
+       
 
            </div>
           </div>

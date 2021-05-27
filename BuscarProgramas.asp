@@ -37,14 +37,7 @@ function visualizar()
         <div class="card-body text-center">
 <form name="frmBusca" id="frmBusca" method="post">
 <input type="hidden" name="Operacao" id="Operacao" />
-<div class="col-lg-6">
-    <div class="input-group">
-      <input type="text" class="form-control" placeholder="Entre com a informação aqui...">
-      <span class="input-group-btn">
-        <button class="btn btn-primary btn-icon-split"type="button">Pesquise</button>
-      </span>
-    </div>
-  </div>
+
 <% 
 call abreConexao 
  sql = "SELECT id, Programas FROM GU_Programas order by Programas"
