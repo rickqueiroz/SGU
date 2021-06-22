@@ -1,17 +1,15 @@
-﻿<!DOCTYPE html>
+<%IF  Session("CPF_Usu") <> "" THEN%>
+
+<!DOCTYPE html>
 <html lang"pt-br"
     <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
         <title>SGA</title>
         <link href="css/styles.css" rel="stylesheet" />
         <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
         <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
-    </head>
+    <meta charset="iso-8859-1">
+</head>
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <a class="navbar-brand" href="index.asp">SGA</a>
@@ -28,7 +26,7 @@
     Sair
   </button>
   <div class="dropdown-menu">
-    <a class="dropdown-item" href="http://sidato.adapec.to.gov.br/sistemas/">Sair</a>   
+    <a class="dropdown-item" href="Logoff.asp">Sair</a>   
   </div>
 </div>
         </nav>
@@ -41,14 +39,17 @@
                                 <div class="sb-nav-link-icon"><i class="fa fa-home" aria-hidden="true"></i></div>
                                 Inicio
                             </a>
+							<%if session("idPerfil") = "Tecnico" then%>
                             <a class="nav-link" href="CadUpload.asp">
                                 <div class="sb-nav-link-icon"><i class="fa fa-paperclip" aria-hidden="true"></i></div>
                                 Anexar Documentos
                             </a>
+						    <%end if%>
                             <a class="nav-link" href="BuscarProgramas.asp">
                                 <div class="sb-nav-link-icon"><i class="fa fa-search" aria-hidden="true"></i></div>
                                 Buscar Documentos
                             </a>
+							<%if session("idPerfil") = "Administrador" then%>
                             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
                                 <div class="sb-nav-link-icon"><i class="fa fa-lock" aria-hidden="true"></i></div>
                                 Administrador
@@ -61,6 +62,7 @@
                                     <a class="nav-link" href="CadProgramas.asp"> Cadastro de Programas</a>
                                 </nav>
                             </div>
+						   <%end if%>	
                         </div>
                     </div>
                 </nav>
@@ -81,4 +83,9 @@
         <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
         
     </body>
+	
+	
 </html>
+<%ELSE
+response.redirect("http://intranet.adapec.to.gov.br/intranet")
+end if%>

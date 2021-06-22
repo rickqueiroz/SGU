@@ -1,4 +1,4 @@
-<%@LANGUAGE="VBSCRIPT" CODEPAGE="65001"%>
+<%@LANGUAGE="VBSCRIPT" CODEPAGE="1252"%>
 <!--#include file ="lib/Conexao.asp"-->
 <!--#include file ="Base.asp"-->
 <%
@@ -42,7 +42,6 @@ END IF
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Cadastrar Pastas</title>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.all.min.js"></script>
 <script src="javascript/Mascara.js"></script>
@@ -104,7 +103,7 @@ function alterar()
 function mensagem(resp) {
 if(resp == 1){
 	Swal.fire({
-      title: "√ìtimo!!!",
+      title: "”timo!!!",
       text: "Programa Cadastrado com Sucesso!",
       icon: "success",
       button: "Ok!",
@@ -114,7 +113,7 @@ if(resp == 1){
 else
 if(resp == 2){
 	 Swal.fire({
-      title: "√ìtimo!!!",
+      title: "”timo!!!",
       text: "Programa Alterado com Sucesso!",
       icon: "success",
       button: "Ok!",
@@ -125,7 +124,7 @@ else
 if(resp == 3){
      Swal.fire({
       title: "Ops!!!",
-      text: "J√° Consta arquivos Cadastrados nesta pasta!",
+      text: "J· Consta arquivos Cadastrados nesta pasta!",
       icon: "error",
       button: "Ok!",
       });
@@ -215,13 +214,13 @@ if(resp == 3){
         <table class="table align-items-center table-flush table-sm" id="dataTable" >
         <thead class="thead-light">
          <%if rs.eof then%>
-  <tr><td>N√£o Existe Nenhum Registro na base de Dados!</td></tr>
+  <tr><td>N&atilde;o Existe Nenhum Registro na base de Dados!</td></tr>
   <%else%>
     <tr>
   <th>Sigla</th>
   <th>Nome Sigla</th>
   <th>Status</th>
-  <th>Opera√ß√£o</th>
+  <th>Opera&ccedil;&atilde;o</th>
   </tr>        
   </thead>
         
@@ -261,15 +260,15 @@ if(resp == 3){
        $('#dataTable').DataTable( {
         "ordering": false,
         "language": {
-            "lengthMenu": "Exibindo _MENU_ registros por p√°gina",
+            "lengthMenu": "Exibindo _MENU_ registros por p·gina",
             "zeroRecords": "Nenhum dado encontrado",
-            "info": "P√°gina _PAGE_ de _PAGES_",
+            "info": "P·gina _PAGE_ de _PAGES_",
             "infoEmpty": "Nenhum registro encontrado",
             "infoFiltered": "(_MAX_ rotas filtradas)",
             "search": "Buscar:",
             "paginate":{
               "previous": "Anterior",
-              "next": "Pr√≥ximo"
+              "next": "PrÛximo"
             }
         }
     } );

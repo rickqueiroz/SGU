@@ -1,4 +1,4 @@
-﻿<!--#include file="base.asp"-->
+<!--#include file="base.asp"-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
       <!-- End Navbar -->
@@ -14,8 +14,8 @@
     </div>
     </div>
         <div class="card-body justify-content-between">
-      <p>&nbsp;&nbsp;&nbsp;   Com intuito de contribuir e melhorar o processo de comunicação organizacional dentro desta Agência estamos relaçando em novo formato a intranet da Adapec. As pastas de programas Sanitários e de Setores serão criadas pelos administradores da intranet, e serão alimentadas pelos servidores responsáveis pelos programas e setores.</br>
-&nbsp;&nbsp;&nbsp;            De inicio a intranet fara apenas upload de cocumentos em PDF. Todas as dúvidas, solicitações e sugestões deverão ser encaminhadas para o e-mail: gacf.adapec@gmail.com</p>
+      <p>&nbsp;&nbsp;&nbsp;   Com intuito de contribuir e melhorar o processo de comunica&ccedil;&atilde;o organizacional dentro desta Ag&ecirc;ncia estamos relan&ccedil;ando em novo formato a intranet da Adapec. As pastas de Programas Sanit&aacute;rios e de Setores ser&atilde;o criadas pelos administradores da intranet, e ser&atilde;o alimentadas por servidores respons&aacute;veis pelos programas e setores.</br>
+&nbsp;&nbsp;&nbsp;            De in&iacute;cio a intranet far&aacute; apenas upload de documentos em PDF. Todas as d&uacute;vidas, solicita&ccedil;&otilde;es e sugest&otilde;es dever&atilde;o ser encaminhadas para o e-mail: gacf.adapec@gmail.com</p>
         <span class="icon text-white-300">  
         </span>
        
